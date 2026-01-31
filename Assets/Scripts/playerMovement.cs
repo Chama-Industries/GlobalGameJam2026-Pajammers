@@ -9,21 +9,50 @@ public class playerMovement : MonoBehaviour
     protected float hIn;
     protected float vIn;
     Vector3 movementDirection;
+    public bool threeDMove = true;
+    public bool canMove = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Update()
     {
-        
+        interact();
+        jump();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        hIn = Input.GetAxis("Horizontal");
-        vIn = Input.GetAxis("Vertical");
+        if(canMove)
+        {
+            if (threeDMove)
+            {
+                hIn = Input.GetAxis("Horizontal");
+                vIn = Input.GetAxis("Vertical");
+            }
+            else
+            {
+                hIn = Input.GetAxis("Horizontal");
+            }
 
-        movementDirection = new Vector3(hIn, 0.0f, vIn);
+            movementDirection = new Vector3(hIn, 0.0f, vIn);
+            movementDirection.Normalize();
 
-        transform.Translate(movementDirection * speed);
+            transform.Translate(movementDirection * speed);
+        }
+    }
+
+    public void interact()
+    {
+        if(Input.GetKey(KeyCode.Mouse0))
+        {
+            //this would do seomthing relative to puzzles
+            canMove = false;
+            //Set it back to true after the interact is done.
+        }
+    }
+    public void jump()
+    {
+        if(Input.GetKey(KeyCode.Space))
+        {
+            //jumps
+        }
     }
 }
