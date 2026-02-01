@@ -10,8 +10,6 @@ public class dialogScript : MonoBehaviour
     private static GameObject HUDRef;
     private static TextMeshProUGUI dialogBox;
     private static GameObject dialogRef;
-    private static TextMeshProUGUI cutsceneBox;
-    private static GameObject cutsceneRef;
     private static Queue<string> toDisplay = new Queue<string>();
     static bool startDisplay = false;
 
@@ -23,10 +21,6 @@ public class dialogScript : MonoBehaviour
         dialogRef = GameObject.FindGameObjectWithTag("dialogBox");
         dialogBox = dialogRef.GetComponentInChildren<TMPro.TextMeshProUGUI>();
         dialogRef.SetActive(false);
-
-        cutsceneRef = GameObject.FindGameObjectWithTag("cutsceneBox");
-        cutsceneBox = cutsceneRef.GetComponentInChildren<TMPro.TextMeshProUGUI>();
-        cutsceneRef.SetActive(false);
     }
 
     public void queueDialog(string dialog)

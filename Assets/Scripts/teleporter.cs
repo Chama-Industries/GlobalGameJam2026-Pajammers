@@ -5,6 +5,7 @@ public class teleporter : MonoBehaviour
 {
     public Camera mainCam;
     public GameObject Player;
+    public GameObject Enemy;
     public GameObject desiredPlayerPosition;
     public GameObject desiredCameraPosition;
 
@@ -12,6 +13,7 @@ public class teleporter : MonoBehaviour
     {
         mainCam = Camera.main;
         Player = GameObject.FindGameObjectWithTag("player");
+        Enemy = GameObject.FindGameObjectWithTag("enemy");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,6 +24,7 @@ public class teleporter : MonoBehaviour
             Player.transform.position = desiredPlayerPosition.transform.position;
             mainCam.GetComponent<cameraBehavior>().toggleFollow();
             mainCam.transform.position = desiredCameraPosition.transform.position;
+            Enemy.GetComponent<enemy>().singleAttack = true;
         }
     }
 }

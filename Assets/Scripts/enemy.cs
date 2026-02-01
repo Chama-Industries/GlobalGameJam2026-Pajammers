@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class enemy : MonoBehaviour
@@ -6,6 +7,8 @@ public class enemy : MonoBehaviour
     public QTE_Controller qteRef;
     public QTE_Trigger enemyAttack;
     public bool singleAttack = false;
+    public int HP = 3;
+    public TextMeshProUGUI winText;
 
     private void Awake()
     {
@@ -18,6 +21,12 @@ public class enemy : MonoBehaviour
         {
             StartCoroutine(attack());
             qteRef.increaseDifficulty();
+        }
+
+        if(HP == 0)
+        {
+            winText.gameObject.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
 
