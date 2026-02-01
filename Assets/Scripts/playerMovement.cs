@@ -20,6 +20,8 @@ public class playerMovement : MonoBehaviour
     private static TextMeshProUGUI HUDBox;
     private static GameObject HUDRef;
 
+    public TextMeshProUGUI loseText;
+
     private void Start()
     {
         comparativeHP = HP;
@@ -59,6 +61,11 @@ public class playerMovement : MonoBehaviour
         {
             HUDBox.text = "Health: " + HP;
             comparativeHP = HP;
+        }
+        if(HP == 0)
+        {
+            loseText.gameObject.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
 
