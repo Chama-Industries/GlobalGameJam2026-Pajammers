@@ -3,8 +3,8 @@ using UnityEngine;
 public class QTE_Controller : MonoBehaviour
 {
     public GameObject qteText;
-    public float timeToMash = 3f;     // Time limit
-    public int pressesNeeded = 15;    // How many presses to win
+    public static float timeToMash = 4f;     // Time limit
+    public static int pressesNeeded = 12;    // How many presses to win
 
     private float timer;
     private int pressCount;
@@ -54,5 +54,11 @@ public class QTE_Controller : MonoBehaviour
         qteText.SetActive(false);
         qteActive = false;
         Debug.Log("You fell!");
+    }
+
+    public void increaseDifficulty()
+    {
+        timeToMash -= 0.25f;
+        pressesNeeded += 2;
     }
 }
