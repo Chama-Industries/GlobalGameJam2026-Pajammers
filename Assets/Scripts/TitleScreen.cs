@@ -5,7 +5,7 @@ public class titleScreen : MonoBehaviour
 {
     public void loadgame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("firstPuzzle");
     }
 
     public void exitgame()
