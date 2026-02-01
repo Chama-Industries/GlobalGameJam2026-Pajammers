@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 
 public class QTE_Trigger : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class QTE_Trigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if it's the player
-        if (other.CompareTag("Player"))
+        if (other.gameObject.tag == "player")
         {
             // Start the QTE
             qte.StartQTE();
