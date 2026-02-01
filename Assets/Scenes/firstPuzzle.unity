@@ -128,12 +128,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 401409669534044126, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 401409669534044126, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 401409669534044126, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 401409669534044126, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.86
       objectReference: {fileID: 0}
     - target: {fileID: 401409669534044126, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.56
+      value: 22.71
       objectReference: {fileID: 0}
     - target: {fileID: 401409669534044126, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -171,6 +183,14 @@ PrefabInstance:
       propertyPath: qteText
       value: 
       objectReference: {fileID: 2109216143}
+    - target: {fileID: 3127331424365724193, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
+      propertyPath: m_Height
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127331424365724193, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
+      propertyPath: m_Radius
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8829001675559929196, guid: 671c16ed3ee859b4cba8b1fdfb15fb3d, type: 3}
       propertyPath: m_Name
       value: testEnemy
