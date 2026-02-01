@@ -6,6 +6,7 @@ public class enemy : MonoBehaviour
     public QTE_Controller qteRef;
     public QTE_Trigger enemyAttack;
     public bool singleAttack = false;
+    public int HP = 3;
 
     private void Awake()
     {

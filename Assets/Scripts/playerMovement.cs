@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
     // Variable that dictates player speed
     public float speed = 0.1f;
+    public int HP = 3;
+    private int comparativeHP;
 
     // Variables that dictate movement direction
     protected float hIn;
@@ -14,9 +17,17 @@ public class playerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    private static TextMeshProUGUI HUDBox;
+    private static GameObject HUDRef;
+
     private void Start()
     {
+        comparativeHP = HP;
         rb = GetComponent<Rigidbody>();
+
+        HUDRef = GameObject.FindGameObjectWithTag("HUDBox");
+        HUDBox = HUDRef.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+        HUDBox.text += " " + HP;
     }
 
     private void Update()
@@ -43,6 +54,11 @@ public class playerMovement : MonoBehaviour
             movementDirection.Normalize();
 
             transform.Translate(movementDirection * speed);
+        }
+        if(comparativeHP != HP)
+        {
+            HUDBox.text = "Health: " + HP;
+            comparativeHP = HP;
         }
     }
 

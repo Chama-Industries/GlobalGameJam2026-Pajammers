@@ -6,9 +6,18 @@ public class QTE_Controller : MonoBehaviour
     public static float timeToMash = 4f;     // Time limit
     public static int pressesNeeded = 12;    // How many presses to win
 
+    public GameObject Player;
+    public GameObject Enemy;
+
     private float timer;
     private int pressCount;
     private bool qteActive = false;
+
+    private void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("player");
+        Enemy = GameObject.FindGameObjectWithTag("enemy");
+    }
 
     void Update()
     {
@@ -19,7 +28,6 @@ public class QTE_Controller : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 pressCount++;
-                Debug.Log("Presses: " + pressCount);
             }
 
             if (pressCount >= pressesNeeded)
@@ -46,14 +54,14 @@ public class QTE_Controller : MonoBehaviour
     {
         qteText.SetActive(false);
         qteActive = false;
-        Debug.Log("You held on!");
+        Enemy.GetComponent<enemy>().HP--;
     }
 
     void Fail()
     {
         qteText.SetActive(false);
         qteActive = false;
-        Debug.Log("You fell!");
+        Player.GetComponent<playerMovement>().HP--;
     }
 
     public void increaseDifficulty()
