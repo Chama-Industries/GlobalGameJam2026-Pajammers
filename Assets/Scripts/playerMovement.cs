@@ -41,7 +41,7 @@ public class playerMovement : MonoBehaviour
 
     public void interact()
     {
-        if(Input.GetKey(KeyCode.Mouse0))
+        if(Input.GetKey(KeyCode.Mouse1))
         {
             //this would do seomthing relative to puzzles
             canMove = false;

@@ -4,6 +4,7 @@ public class enabler : MonoBehaviour
 {
     public GameObject UI;
     public dialogScript dialogReference;
+    public string dialog;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class enabler : MonoBehaviour
     {
         if (collision.gameObject.tag == "player")
         {
-            dialogReference.queueDialog("OWIIIIEEE");
+            dialogReference.queueDialog(dialog);
             dialogReference.startDialog();
         }
     }

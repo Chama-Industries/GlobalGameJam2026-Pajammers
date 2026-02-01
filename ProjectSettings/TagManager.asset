@@ -7,6 +7,8 @@ TagManager:
   - player
   - dialogBox
   - UI
+  - HUDBox
+  - cutsceneBox
   layers:
   - Default
   - TransparentFX
