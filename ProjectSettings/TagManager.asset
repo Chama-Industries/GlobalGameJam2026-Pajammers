@@ -9,6 +9,7 @@ TagManager:
   - UI
   - HUDBox
   - cutsceneBox
+  - enemy
   layers:
   - Default
   - TransparentFX

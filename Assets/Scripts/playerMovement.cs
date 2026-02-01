@@ -69,6 +69,7 @@ public class playerMovement : MonoBehaviour
     public void changeDimensionalMovement()
     {
         threeDMove = !threeDMove;
+        rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         rb.linearVelocity = Vector3.zero;
         vIn = 0.0f;
     }
