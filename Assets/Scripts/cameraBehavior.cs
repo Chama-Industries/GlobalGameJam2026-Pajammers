@@ -1,9 +1,11 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class cameraBehavior : MonoBehaviour
 {
     public GameObject player;
     Vector3 offset;
+    bool followPlayer = true;
 
     void Start()
     {
@@ -14,6 +16,19 @@ public class cameraBehavior : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+        if (followPlayer)
+        {
+            transform.position = player.transform.position + offset;
+        }
+    }
+
+    public void changeOffset(Vector3 newOffset)
+    {
+        offset = newOffset;
+    }
+
+    public void toggleFollow()
+    {
+        followPlayer = !followPlayer;
     }
 }

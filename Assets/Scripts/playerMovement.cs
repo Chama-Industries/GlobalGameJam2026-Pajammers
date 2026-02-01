@@ -65,4 +65,11 @@ public class playerMovement : MonoBehaviour
     {
         return Physics.Raycast(transform.position, Vector3.down, 2.0f);
     }
+
+    public void changeDimensionalMovement()
+    {
+        threeDMove = !threeDMove;
+        rb.linearVelocity = Vector3.zero;
+        vIn = 0.0f;
+    }
 }
