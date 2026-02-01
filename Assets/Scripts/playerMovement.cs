@@ -36,6 +36,11 @@ public class playerMovement : MonoBehaviour
     {
         interact();
         jump();
+
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     void FixedUpdate()
