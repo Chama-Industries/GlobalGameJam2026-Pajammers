@@ -12,6 +12,13 @@ public class playerMovement : MonoBehaviour
     public bool threeDMove = true;
     public bool canMove = true;
 
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void Update()
     {
         interact();
@@ -44,15 +51,18 @@ public class playerMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.Mouse1))
         {
             //this would do seomthing relative to puzzles
-            //canMove = false;
-            //Set it back to true after the interact is done.
         }
     }
     public void jump()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
-            //jumps
+            rb.AddForce(new Vector3(0.0f, 10.0f, 0.0f), ForceMode.Impulse);
         }
+    }
+
+    public bool isGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 2.0f);
     }
 }
