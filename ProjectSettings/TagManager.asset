@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - player
+  - dialogBox
+  - UI
+  - HUDBox
+  - cutsceneBox
   layers:
   - Default
   - TransparentFX
